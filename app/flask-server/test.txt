@@ -1,0 +1,11 @@
+import joblib
+import numpy as np
+
+model = joblib.load("models/diabetes_xgb.pkl")  # Load model
+
+features = joblib.load("models/diabetes_features.pkl")  # Load feature list
+
+test_input = np.random.rand(1, len(features))  # Create random test data
+
+prediction = model.predict(test_input)
+print("✅ Prediction:", prediction)
